@@ -4,7 +4,9 @@
   "description": "Open Zeppelin Defender",
   "main": "index.js",
   "scripts": {
-    "test": "npx hardhat test"
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat deploy"
   },
   "repository": {
     "type": "git",

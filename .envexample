@@ -1,0 +1,6 @@
+MNEMONIC = " 12 words seedpharse"
+ETHERSCAN = "etherscan api key"
+INFURA_ID = "infura ID"
+ALCHEMY_KEY = "Alchemy ID"
+MYADDRESS = "your wallet address"
+

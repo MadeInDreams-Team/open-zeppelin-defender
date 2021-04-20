@@ -8,7 +8,6 @@ require('@openzeppelin/hardhat-upgrades');
  * @type import('hardhat/config').HardhatUserConfig
  */
 
-
  // task action function receives the Hardhat Runtime Environment as second argument
  task(
    "blockNumber",
@@ -20,8 +19,6 @@ require('@openzeppelin/hardhat-upgrades');
    }
  );
 
-
-
  task(
   "deploy",
   "Deploy your contract",
@@ -29,7 +26,7 @@ require('@openzeppelin/hardhat-upgrades');
 
     //let factory = new ethers.ContractFactory(MDEX.abi, MDEX.bytecode)
     const MDEV = await ethers.getContractFactory("MDEV");
-    const mdev = await upgrades.deployProxy(MDEV,['0xE02c4dE60234DA63e759eeE3F1AF219075e55E3E']);
+    const mdev = await upgrades.deployProxy(MDEV,[process.env.MYADDRESS]);
     await mdev.deployed();
     console.log('YOUR CONTRACT ADDRESS :',mdev.address)
 
@@ -42,10 +39,6 @@ require('@openzeppelin/hardhat-upgrades');
   }
 );
  
-
-
-
-
  module.exports = {
   defaultNetwork: "rinkeby",
   networks: {
