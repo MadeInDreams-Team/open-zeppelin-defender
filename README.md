@@ -13,8 +13,9 @@ This is the ideal setup to
 
 - The medium article here
 ## Installation
+To install this package run
 
-npm install @madeindreams/open-zeppelin-defender
+```npm install @madeindreams/open-zeppelin-defender```
 
 You will need to rename the .envexample to .env and edit it with the following
 ```
@@ -31,13 +32,15 @@ Once you are done save the .env file.
 
 To Compile the smart contract use the command
 
-```npm compile```
+```npm run compile```
 
 to deploy your contract
 
-```npm deploy```
+```npm run deploy```
 
+To run the test
 
+```npm run test```
 
 If you wish to use a multisignature vault to own your contract. You must uncomment the lines 33 to 37 in the hardhat.config.js file that transfer the contract ownership to the vault.
 

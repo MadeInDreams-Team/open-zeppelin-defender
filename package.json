@@ -1,5 +1,5 @@
 {
-  "name": "@madeindreams/oz-defender",
+  "name": "@madeindreams/open-zeppelin-defender",
   "version": "1.0.0",
   "description": "Open Zeppelin Defender",
   "main": "index.js",
@@ -35,5 +35,8 @@
     "hardhat": "^2.2.0",
     "hardhat-deploy": "^0.7.5",
     "hardhat-deploy-ethers": "^0.3.0-beta.7"
+  },
+  "dependencies": {
+    "@madeindreams/open-zeppelin-defender": "^1.0.0"
   }
 }

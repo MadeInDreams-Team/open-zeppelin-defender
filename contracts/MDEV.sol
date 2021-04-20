@@ -16,7 +16,8 @@ contract MDEV is Initializable, PausableUpgradeable, AccessControlUpgradeable {
     
     uint256 private tradingFees;
     address private admin;
-
+  
+   
     /// @notice Events
     event ValueChanged(uint256 newValue);
 
@@ -26,8 +27,10 @@ contract MDEV is Initializable, PausableUpgradeable, AccessControlUpgradeable {
    function  initialize(address _admin) public initializer {
         __Pausable_init();
         admin = _admin;
+      
         _setupRole(DEFAULT_ADMIN_ROLE, tx.origin);
     }
+
 
 
 
@@ -38,6 +41,7 @@ contract MDEV is Initializable, PausableUpgradeable, AccessControlUpgradeable {
     function store(uint256 newValue)  public whenNotPaused{
         require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Unauthorized to store");
         tradingFees = newValue;
+
         emit ValueChanged(newValue);
     }
 
@@ -62,5 +66,7 @@ contract MDEV is Initializable, PausableUpgradeable, AccessControlUpgradeable {
         require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "Unauthorized to unpause");
         _unpause();
     }
+
+
 
 }
