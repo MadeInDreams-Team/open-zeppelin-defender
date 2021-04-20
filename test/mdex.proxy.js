@@ -1,5 +1,6 @@
 // test/MDEX.test.js
 // Load dependencies
+require('dotenv').config()
 const { expect } = require('chai');
 
 // TRUFFLE
@@ -36,7 +37,7 @@ let mdex;
 describe('MDEV (proxy)', function () {
   beforeEach(async function () {
     MDEX = await ethers.getContractFactory("MDEV");
-    mdex = await upgrades.deployProxy(MDEX,['0xE02c4dE60234DA63e759eeE3F1AF219075e55E3E']);
+    mdex = await upgrades.deployProxy(MDEX,[process.env.MYADDRESS]);
   });
  
   // Test case
