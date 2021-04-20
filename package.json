@@ -1,0 +1,37 @@
+{
+  "name": "@madeindreams/oz-defender",
+  "version": "1.0.0",
+  "description": "Open Zeppelin Defender",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Madeindreams/oz-defender.git"
+  },
+  "keywords": [
+    "Smart-contract",
+    "security",
+    "audit"
+  ],
+  "author": "Ian Decentralize",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Madeindreams/oz-defender/issues"
+  },
+  "homepage": "https://github.com/Madeindreams/oz-defender#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@openzeppelin/contracts": "^4.0.0",
+    "@openzeppelin/contracts-upgradeable": "^4.0.0",
+    "@openzeppelin/hardhat-upgrades": "^1.6.0",
+    "chai": "^4.3.4",
+    "dotenv": "^8.2.0",
+    "ethers": "^5.1.1",
+    "hardhat": "^2.2.0",
+    "hardhat-deploy": "^0.7.5",
+    "hardhat-deploy-ethers": "^0.3.0-beta.7"
+  }
+}
