@@ -8,10 +8,7 @@ This is the ideal setup to
 - Deploy and verify smart contract
 
 
-- Vou can watch the video here
 
-
-- The medium article here
 ## Installation
 To install this package run
 
@@ -41,6 +38,24 @@ to deploy your contract
 To run the test
 
 ```npm run test```
+
+If you want to verify that contract, once deployed, head to etherscan an veryfy the proxy. It will fail but will return the address of your implementation.
+Copy this address and use it to verify your implementation.
+
+``` npx hardat verify --network rinkeby <the adress of the implementation>```
+
+
+That's it. You compiled, deployed, and verified your contract.
+
+Now head to Defender and make a proposal or look at the tasks in hardhat-config.js to deploy some Upgrades.
+
+Make some changes the the sample contract and save it as MDEV2. run the following command
+
+```npx hardhat upgrade```
+
+This will upgade your contrct to the second version v2.
+
+
 
 If you wish to use a multisignature vault to own your contract. You must uncomment the lines 33 to 37 in the hardhat.config.js file that transfer the contract ownership to the vault.
 
