@@ -1,3 +1,5 @@
+const { task } = require('hardhat/config');
+
 require('dotenv').config()
 require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-ethers")
@@ -7,6 +9,8 @@ require('@openzeppelin/hardhat-upgrades');
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
+const MDEV_ADDRESS = "Your proxy adress "
 
  // task action function receives the Hardhat Runtime Environment as second argument
  task(
@@ -24,7 +28,6 @@ require('@openzeppelin/hardhat-upgrades');
   "Deploy your contract",
   async (_, { ethers,upgrades }) => {
 
-    //let factory = new ethers.ContractFactory(MDEX.abi, MDEX.bytecode)
     const MDEV = await ethers.getContractFactory("MDEV");
     const mdev = await upgrades.deployProxy(MDEV,[process.env.MYADDRESS]);
     await mdev.deployed();
@@ -38,6 +41,19 @@ require('@openzeppelin/hardhat-upgrades');
     
   }
 );
+
+task(
+  "upggrade",
+  "Upgrade your contract",
+  async (_, { ethers,upgrades }) => {
+    const MDEV2 = await ethers.getContractFactory("MDEV2");
+    const mdev = await upgrades.upgradeProxy(MDEV_ADDRESS,MDEV2);
+    console.log('MDEV Updated to V2')
+    
+  }
+);
+
+task()
  
  module.exports = {
   defaultNetwork: "rinkeby",
@@ -49,6 +65,7 @@ require('@openzeppelin/hardhat-upgrades');
       }
     },
     rinkeby: {
+
       url: "https://rinkeby.infura.io/v3/"+process.env.INFURA_ID,
       accounts: {mnemonic: process.env.MNEMONIX}
     },
@@ -81,4 +98,4 @@ require('@openzeppelin/hardhat-upgrades');
     timeout: 20000
   }
 }
-//npx hardhat verify --network rinkeby 0x887C4272CC7aF72C37738777B77879577B31D7BA "0xE02c4dE60234DA63e759eeE3F1AF219075e55E3E"
+//npx hardhat verify --network rinkeby 0x5808197Bb9c046158e566e23CE0C18992FEA6011 "0xE02c4dE60234DA63e759eeE3F1AF219075e55E3E"
