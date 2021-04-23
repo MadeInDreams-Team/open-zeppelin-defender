@@ -1,5 +1,5 @@
 {
-  "name": "@madeindreams/open-zeppelin-defender",
+  "name": "@madeindreams-team/open-zeppelin-defender",
   "version": "1.0.3",
   "description": "Open Zeppelin Defender Template with HardHat",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MadeInDreams/open-zeppelin-defender.git"
+    "url": "git+https://github.com/MadeInDreams-Team/open-zeppelin-defender.git"
   },
   "keywords": [
     "Smart-contract",
@@ -21,9 +21,9 @@
   "author": "Ian Decentralize",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MadeInDreams/open-zeppelin-defender/issues"
+    "url": "https://github.com/MadeInDreams-Team/open-zeppelin-defender/issues"
   },
-  "homepage": "https://github.com/MadeInDreams/open-zeppelin-defender#readme",
+  "homepage": "https://github.com/MadeInDreams-Team/open-zeppelin-defender#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.1",
