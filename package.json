@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx hardhat test",
     "compile": "npx hardhat compile",
-    "deploy": "npx hardhat deploy"
+    "deploy": "npx hardhat deploy",
+    "deployGnosis": "npx hardhat deployGnosis"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,9 @@
     "hardhat": "^2.2.0",
     "hardhat-deploy": "^0.7.5",
     "hardhat-deploy-ethers": "^0.3.0-beta.7"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@madeindreams"
   }
 
 }

@@ -8,7 +8,6 @@ This is the ideal setup to
 - Deploy and verify smart contract
 
 
-
 ## Installation
 To install this package run
 
@@ -31,16 +30,22 @@ To Compile the smart contract use the command
 
 ```npm run compile```
 
-to deploy your contract
+to deploy your contract and own it with the deployer account use
 
 ```npm run deploy```
+
+If you have a Gnosis vault use
+
+```npm run deployGnosis```
 
 To run the test
 
 ```npm run test```
 
-If you want to verify that contract, once deployed, head to etherscan an veryfy the proxy. It will fail but will return the address of your implementation.
-Copy this address and use it to verify your implementation.
+If you want to verify that contract, once deployed, head to etherscan an veryfy the proxy. There is a button on the top right of the code textfield under the code tab on Etherscan.
+Select the verify proxy otion. Leave the proxy address in the field and click verify. It will fail but will return the address of your implementation.
+Copy this address and use it to verify your implementation in the terminal with hardhat. 
+*Note that you need the Etherscan API key in your .env for verification*
 
 ``` npx hardat verify --network rinkeby <the adress of the implementation>```
 
@@ -57,7 +62,7 @@ This will upgade your contrct to the second version v2.
 
 
 
-If you wish to use a multisignature vault to own your contract. You must uncomment the lines 33 to 37 in the hardhat.config.js file that transfer the contract ownership to the vault.
+
 
 ## Resource
 

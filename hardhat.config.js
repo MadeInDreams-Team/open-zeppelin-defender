@@ -31,16 +31,30 @@ const MDEV_ADDRESS = "Your proxy adress "
     const MDEV = await ethers.getContractFactory("MDEV");
     const mdev = await upgrades.deployProxy(MDEV,[process.env.MYADDRESS]);
     await mdev.deployed();
-    console.log('YOUR CONTRACT ADDRESS :',mdev.address)
+    console.log('YOUR PROXY ADDRESS :',mdev.address)
 
-    //const gnosisSafe = '0x9FD08Cac2F176C0898ba4D73b02B757c6B2D7150';
-    //console.log("Transferring ownership of ProxyAdmin...");
+  }
+);
+
+task(
+  "deployGnosis",
+  "Deploy your contract owned by your GNOSIS vault",
+  async (_, { ethers,upgrades }) => {
+
+    const MDEV = await ethers.getContractFactory("MDEV");
+    const mdev = await upgrades.deployProxy(MDEV,[process.env.MYADDRESS]);
+    await mdev.deployed();
+    console.log('YOUR PROXY ADDRESS :',mdev.address)
+
+    const gnosisSafe = process.env.GNOSIS;
+    console.log("Transferring ownership of ProxyAdmin...");
     // The owner of the ProxyAdmin can upgrade our contracts
-    //await upgrades.admin.transferProxyAdminOwnership(gnosisSafe);
-    //console.log("Transferred ownership of ProxyAdmin to:", gnosisSafe);
+    await upgrades.admin.transferProxyAdminOwnership(gnosisSafe);
+    console.log("Transferred ownership of ProxyAdmin to:", gnosisSafe);
     
   }
 );
+
 
 task(
   "upggrade",

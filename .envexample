@@ -3,4 +3,4 @@ ETHERSCAN = "etherscan api key"
 INFURA_ID = "infura ID"
 ALCHEMY_KEY = "Alchemy ID"
 MYADDRESS = "your wallet address"
-
+GNOSIS = "your gnosis vault address"
