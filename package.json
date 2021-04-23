@@ -1,6 +1,6 @@
 {
   "name": "@madeindreams-team/open-zeppelin-defender",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Open Zeppelin Defender Template with HardHat",
   "main": "index.js",
   "scripts": {
